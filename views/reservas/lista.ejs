@@ -1,0 +1,80 @@
+<section class="pagina">
+
+  <h2><%= seccion %></h2>
+
+  <p>
+    En esta sección podés consultar las reservas realizadas.
+  </p>
+
+  <div class="acciones">
+    <a class="boton" href="/reservas/nueva">
+      Nueva reserva
+    </a>
+  </div>
+
+  <% if (reservas.length === 0) { %>
+
+    <div class="vacio">
+      <h3>No hay reservas</h3>
+
+      <p>
+        Actualmente no existen reservas registradas.
+      </p>
+
+      <a href="/reservas/nueva">
+        Crear la primera reserva
+      </a>
+    </div>
+
+  <% } else { %>
+
+    <div class="tabla-contenedor">
+
+      <table>
+
+        <caption class="sr-only">
+          Lista de reservas de salas de estudio
+        </caption>
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Estudiante</th>
+            <th>Sala</th>
+            <th>Fecha</th>
+            <th>Turno</th>
+            <th>Personas</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <% reservas.forEach((reserva) => { %>
+
+            <tr>
+              <td><%= reserva.id %></td>
+              <td><%= reserva.estudiante %></td>
+              <td><%= reserva.sala %></td>
+              <td><%= reserva.fecha %></td>
+              <td><%= reserva.turno %></td>
+              <td><%= reserva.personas %></td>
+
+              <td>
+                <a href="/reservas/<%= reserva.id %>">
+                  Ver detalle
+                </a>
+              </td>
+            </tr>
+
+          <% }) %>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  <% } %>
+
+</section>

@@ -1,0 +1,53 @@
+<section class="pagina">
+
+  <h2><%= seccion %></h2>
+
+  <h3>Detalle de la reserva #<%= reserva.id %></h3>
+
+  <dl class="detalle">
+
+    <div>
+      <dt>Estudiante</dt>
+      <dd><%= reserva.estudiante %></dd>
+    </div>
+
+    <div>
+      <dt>Email</dt>
+      <dd><%= reserva.email %></dd>
+    </div>
+
+    <div>
+      <dt>Sala</dt>
+      <dd><%= reserva.sala %></dd>
+    </div>
+
+    <div>
+      <dt>Fecha</dt>
+      <dd><%= reserva.fecha %></dd>
+    </div>
+
+    <div>
+      <dt>Turno</dt>
+      <dd><%= reserva.turno %></dd>
+    </div>
+
+    <div>
+      <dt>Cantidad de personas</dt>
+      <dd><%= reserva.personas %></dd>
+    </div>
+
+  </dl>
+
+  <div class="acciones">
+
+    <a class="boton" href="/reservas">
+      Volver a reservas
+    </a>
+
+    <a class="boton boton-secundario" href="/reservas/nueva">
+      Nueva reserva
+    </a>
+
+  </div>
+
+</section>
